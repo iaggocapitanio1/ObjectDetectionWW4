@@ -2,6 +2,7 @@ import cv2 as cv
 import numpy
 from typing import Tuple
 
+
 # noinspection PyUnresolvedReferences
 def get_ratio_pixels_millimeters(img: numpy.ndarray, aruco_type=cv.aruco.DICT_5X5_50) -> float:
     parameters = cv.aruco.DetectorParameters()
