@@ -33,6 +33,7 @@ while True:
             print(f"Normalized corners are: \n {transform(clean_contour_points, *bounding_box)}")
 
     cv.imshow("Frame", frame)
+    cv.imwrite('output.jpg', frame)
     key = cv.waitKey(0)
     if key:
         break

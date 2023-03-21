@@ -35,6 +35,12 @@ The following functions are provided in the script:
 
 The example script reads an input image, processes it using a series of OpenCV functions (converting to grayscale, applying Gaussian blur, detecting edges with Canny, dilating and eroding), and then detects and analyzes contours of interest. The script draws the simplified contours, corner points, and bounding boxes on the original image, calculates the real-world distances between corner points, and prints the normalized corner coordinates.
 
+## Example Output
+
+The image below shows an example of the output produced by the script:
+
+![Example Output](output.jpg)
+
 ## License
 
 This project is open-source and available for personal and educational purposes.
