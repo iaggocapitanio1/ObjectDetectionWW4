@@ -4,11 +4,12 @@ from typing import Tuple
 
 
 # noinspection PyUnresolvedReferences
+
 def get_ratio_pixels_millimeters(img: numpy.ndarray, aruco_type=cv.aruco.DICT_5X5_50) -> float:
-    parameters = cv.aruco.DetectorParameters()
+    parameters = cv.aruco.DetectorParameters_create()
     aruco_dict = cv.aruco.getPredefinedDictionary(aruco_type)
     marker_size = aruco_dict.markerSize * 4  # cm
-    corners, _, _ = cv.aruco.ArucoDetector(aruco_dict, parameters).detectMarkers(img)
+    corners, ids, _ = cv.aruco.detectMarkers(img, aruco_dict, parameters=parameters)
     aruco_perimeter = cv.arcLength(corners[0], True)
     return round(aruco_perimeter / marker_size, 7) / 100
 
